@@ -1,0 +1,18 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+form{
+    width:90%;
+    margin: 20px auto;
+}
+label{
+    display: block;
+    margin: 5px 0;
+}
+input{
+    padding: 5px 10px;
+}
+button{
+    padding: 6px 10px;
+    cursor: pointer;
+}
