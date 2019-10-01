@@ -10,9 +10,14 @@ function formSubmit(){
 
 function userRepos(username){
     fetch(`https://api.github.com/users/${username}/repos`)
-      .then(response => response.json())
+      .then(response => {
+          if (response.ok){
+              return response.json();
+          }
+          throw new Error(response.statusText);
+      })
       .then(responseJson => displayRepos(responseJson))
-      .catch(error => alert('There was an error!'));
+      .catch(err => {alert(`There was an error! Something went wrong: ${err.message}`)});
   }
 
   function displayRepos(responseJson){
